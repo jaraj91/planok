@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,7 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/usuarios', function() {
-    return view('users');
-})->name('users');
+Route::get('/usuarios', [UserController::class, 'index'])->name('users');
 
 Route::get('/cotizaciones', function() {
     return view('quotations');
