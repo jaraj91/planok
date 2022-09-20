@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/usuarios', function() {
+    return view('users');
+})->name('users');
+
+Route::get('/cotizaciones', function() {
+    return view('quotations');
+})->name('quotations');
