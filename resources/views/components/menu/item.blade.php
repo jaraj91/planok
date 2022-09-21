@@ -7,7 +7,7 @@
 <a
     href="{{ route($route) }}"
     @class([
-        'border-indigo-500' => $isCurrentRoute,
+        'border-orange-500' => $isCurrentRoute,
         'border-transparent' => ! $isCurrentRoute,
         'text-gray-900' => $isCurrentRoute,
         'text-gray-500' => ! $isCurrentRoute,

@@ -73,7 +73,7 @@
                     <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ $quotation->createdAt() }}</td>
                     <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ $quotation->updatedAt() }}</td>
                     <td class="px-3 py-4 text-sm text-gray-500">
-                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Ver Detalle</a>
+                        <a href="#" class="inline-flex whitespace-nowrap items-center rounded border border-transparent bg-orange-100 px-2.5 py-1.5 text-xs font-medium text-orange-700 hover:bg-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">Ver detalle</a>
                     </td>
                 </tr>
                 @empty

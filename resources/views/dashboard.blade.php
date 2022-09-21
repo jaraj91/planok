@@ -8,7 +8,7 @@
         <dl class="grid grid-cols-1 gap-5 mt-5 sm:grid-cols-2 lg:grid-cols-4">
             <div class="relative px-4 pt-5 pb-12 overflow-hidden bg-white rounded-lg shadow sm:px-6 sm:pt-6">
                 <dt>
-                    <div class="absolute p-3 bg-indigo-500 rounded-md">
+                    <div class="absolute p-3 bg-orange-500 rounded-md">
                         <!-- Heroicon name: outline/users -->
                         <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -29,7 +29,7 @@
                     </p>
                     <div class="absolute inset-x-0 bottom-0 px-4 py-4 bg-gray-50 sm:px-6">
                         <div class="text-sm">
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span class="sr-only"> Total Subscribers stats</span></a>
+                            <a href="#" class="font-medium text-orange-600 hover:text-orange-500"> View all<span class="sr-only"> Total Subscribers stats</span></a>
                         </div>
                     </div>
                 </dd>
@@ -37,7 +37,7 @@
 
             <div class="relative px-4 pt-5 pb-12 overflow-hidden bg-white rounded-lg shadow sm:px-6 sm:pt-6">
                 <dt>
-                    <div class="absolute p-3 bg-indigo-500 rounded-md">
+                    <div class="absolute p-3 bg-orange-500 rounded-md">
                         <!-- Heroicon name: outline/envelope-open -->
                         <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -58,7 +58,7 @@
                     </p>
                     <div class="absolute inset-x-0 bottom-0 px-4 py-4 bg-gray-50 sm:px-6">
                         <div class="text-sm">
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span class="sr-only"> Avg. Open Rate stats</span></a>
+                            <a href="#" class="font-medium text-orange-600 hover:text-orange-500"> View all<span class="sr-only"> Avg. Open Rate stats</span></a>
                         </div>
                     </div>
                 </dd>
@@ -66,7 +66,7 @@
 
             <div class="relative px-4 pt-5 pb-12 overflow-hidden bg-white rounded-lg shadow sm:px-6 sm:pt-6">
                 <dt>
-                    <div class="absolute p-3 bg-indigo-500 rounded-md">
+                    <div class="absolute p-3 bg-orange-500 rounded-md">
                         <!-- Heroicon name: outline/cursor-arrow-rays -->
                         <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -87,7 +87,7 @@
                     </p>
                     <div class="absolute inset-x-0 bottom-0 px-4 py-4 bg-gray-50 sm:px-6">
                         <div class="text-sm">
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span class="sr-only"> Avg. Click Rate stats</span></a>
+                            <a href="#" class="font-medium text-orange-600 hover:text-orange-500"> View all<span class="sr-only"> Avg. Click Rate stats</span></a>
                         </div>
                     </div>
                 </dd>
@@ -95,7 +95,7 @@
 
             <div class="relative px-4 pt-5 pb-12 overflow-hidden bg-white rounded-lg shadow sm:px-6 sm:pt-6">
                 <dt>
-                    <div class="absolute p-3 bg-indigo-500 rounded-md">
+                    <div class="absolute p-3 bg-orange-500 rounded-md">
                         <!-- Heroicon name: outline/cursor-arrow-rays -->
                         <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -116,7 +116,7 @@
                     </p>
                     <div class="absolute inset-x-0 bottom-0 px-4 py-4 bg-gray-50 sm:px-6">
                         <div class="text-sm">
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span class="sr-only"> Avg. Click Rate stats</span></a>
+                            <a href="#" class="font-medium text-orange-600 hover:text-orange-500"> View all<span class="sr-only"> Avg. Click Rate stats</span></a>
                         </div>
                     </div>
                 </dd>
