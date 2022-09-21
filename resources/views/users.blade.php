@@ -17,23 +17,23 @@
                 @forelse ($users as $user)
                 <tr>
                     <td class="w-full py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
-                        {{ str($user->nombre . ' ' . $user->apellido)->title() }}
+                        {{ $user->name() }}
                         <dl class="font-normal lg:hidden">
                             <dt class="sr-only">Rut</dt>
-                            <dd class="mt-1 text-gray-700 truncate">{{ str($user->rut)->rut() }}</dd>
+                            <dd class="mt-1 text-gray-700">{{ $user->rut() }}</dd>
                             <dt class="sr-only">Edad</dt>
-                            <dd class="mt-1 text-gray-700 truncate">{{ $user->edad }} años</dd>
+                            <dd class="mt-1 text-gray-700">{{ $user->age() }} años</dd>
                             <dt class="sr-only">Sexo</dt>
-                            <dd class="mt-1 text-gray-700 truncate">{{ str($user->sexo)->title() }}</dd>
+                            <dd class="mt-1 text-gray-700">{{ $user->sex() }}</dd>
                             <dt class="sr-only sm:hidden">Correo</dt>
-                            <dd class="mt-1 text-gray-500 lowercase truncate sm:hidden">{{ $user->correo }}</dd>
+                            <dd class="mt-1 text-gray-500 sm:hidden">{{ $user->email() }}</dd>
                         </dl>
                     </td>
-                    <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ str($user->rut)->rut() }}</td>
-                    <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ $user->edad }}</td>
-                    <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ str($user->sexo)->title() }}</td>
-                    <td class="hidden px-3 py-4 text-sm text-gray-500 lowercase sm:table-cell">{{ $user->correo }}</td>
-                    <td class="px-3 py-4 text-sm text-gray-500">{{ $user->perfil ?? 'Sin perfil' }}</td>
+                    <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ $user->rut() }}</td>
+                    <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ $user->age() }}</td>
+                    <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ $user->sex() }}</td>
+                    <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">{{ $user->email() }}</td>
+                    <td class="px-3 py-4 text-sm text-gray-500">{{ $user->profile() ?? 'Sin perfil' }}</td>
                     <td class="px-3 py-4">
                         <span
                             @class([
@@ -42,14 +42,14 @@
                                 'text-xs',
                                 'font-semibold',
                                 'leading-5',
-                                'text-green-800' => $user->estado == 'Activo',
-                                'text-gray-800' => $user->estado != 'Activo',
-                                'bg-green-100' => $user->estado == 'Activo',
-                                'bg-gray-100' => $user->estado != 'Activo',
+                                'text-green-800' => $user->status()->isActive(),
+                                'text-gray-800' => $user->status()->isNotActive(),
+                                'bg-green-100' => $user->status()->isActive(),
+                                'bg-gray-100' => $user->status()->isNotActive(),
                                 'rounded-full',
                             ])
                         >
-                            {{ $user->estado }}
+                            {{ $user->status()->label() }}
                         </span>
                     </td>
                 </tr>
