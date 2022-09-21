@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>Usuarios</x-slot:title>
-    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+    <div class="overflow-hidden overflow-x-auto shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
         <table class="min-w-full divide-y divide-gray-300">
             <thead class="bg-gray-50">
                 <tr>
@@ -16,7 +16,7 @@
             <tbody class="bg-white divide-y divide-gray-200">
                 @forelse ($users as $user)
                 <tr>
-                    <td class="w-full py-4 pl-4 pr-3 text-sm font-medium text-gray-900 max-w-0 sm:w-auto sm:max-w-none sm:pl-6">
+                    <td class="w-full py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
                         {{ str($user->nombre . ' ' . $user->apellido)->title() }}
                         <dl class="font-normal lg:hidden">
                             <dt class="sr-only">Rut</dt>

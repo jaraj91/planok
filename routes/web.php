@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuotationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -20,6 +21,4 @@ Route::get('/', function () {
 
 Route::get('/usuarios', [UserController::class, 'index'])->name('users');
 
-Route::get('/cotizaciones', function() {
-    return view('quotations');
-})->name('quotations');
+Route::get('/cotizaciones', [QuotationController::class, 'index'])->name('quotations');
