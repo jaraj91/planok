@@ -65,10 +65,8 @@ class QuotationController
             ->join('producto AS prod', 'cp.idProducto', '=', 'prod.idProducto')
             ->join('tipo_producto AS tp', 'prod.idTipoProducto', '=', 'tp.idTipoProducto')
             ->where('cp.idCotizacion', '=', $quotation->id())
-            ->get()
-            ->map(function ($data) {
-                return ProductDTO::make($data);
-            });
+            ->paginate(5)
+            ->through(fn ($data) => ProductDTO::make($data));
 
         return view('quotations.show', compact('quotation', 'customer', 'user', 'products'));
     }
