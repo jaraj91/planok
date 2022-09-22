@@ -22,7 +22,6 @@ class QuotationDTO
         private string $createdAt,
         private string $updatedAt,
     ) {
-
     }
 
     public function id()
@@ -45,27 +44,29 @@ class QuotationDTO
 
     public function subTotal()
     {
-        return $this->formatAmount($this->subTotal);
+        return Str::of($this->subTotal)->currency();
     }
 
     public function discount()
     {
-        return $this->formatAmount($this->subTotal * $this->discount / 100) . ' (' . $this->discount . '%)';
+        return Str::of($this->subTotal * $this->discount / 100)
+            ->currency()
+            ->append(' (' . $this->discount . '%)');
     }
 
     public function total()
     {
-        return $this->formatAmount($this->total);
+        return Str::of($this->total)->currency();
     }
 
     public function credit()
     {
-        return $this->formatAmount($this->credit);
+        return Str::of($this->credit)->currency();
     }
 
     public function creditAmount()
     {
-        return $this->formatAmount($this->creditAmount);
+        return Str::of($this->creditAmount)->currency();
     }
 
     public function status()
@@ -82,12 +83,4 @@ class QuotationDTO
     {
         return Carbon::make($this->updatedAt)->format('d-m-Y');
     }
-
-    private function formatAmount(float $amount)
-    {
-        $decimal = explode('.', (string) $amount)[1] ?? '';
-        $decimal = $decimal != '' ? ',' . $decimal : '';
-        return '$' . number_format($amount, 0, ',', '.') . $decimal;
-    }
-
 }

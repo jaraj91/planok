@@ -17,7 +17,6 @@ class UserDTO
         private string $status,
         private string $profile,
     ) {
-
     }
 
     public function name()

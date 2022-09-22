@@ -35,5 +35,15 @@ class AppServiceProvider extends ServiceProvider
         Stringable::macro('rut', function() {
             return new Stringable(Str::rut($this->value));
         });
+
+        Str::macro('currency', function($value, $currency = '$') {
+            $decimal = explode('.', (string) $value)[1] ?? '';
+            $decimal = $decimal != '' ? ',' . $decimal : '';
+            return Str::of($currency . number_format($value, 0, ',', '.') . $decimal);
+        });
+
+        Stringable::macro('currency', function($currency = '$') {
+            return new Stringable(Str::currency($this->value, $currency));
+        });
     }
 }
