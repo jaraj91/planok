@@ -20,14 +20,13 @@ class GetCustomersHavePurchaseProductInSector
             ->select('cli.rut', 'cli.nombre', 'cli.telefono', 'cli.email', 'cli.edad', 'cli.sexo', 'cli.region')
             ->join('cotizacion AS cot', 'cli.id', '=', 'cot.idCliente')
             ->join('cotizacion_producto AS cp', 'cot.idCotizacion', '=', 'cp.idCotizacion')
-            ->join('producto AS prod', function ($join) {
-                $join->on('cp.idProducto', '=', 'prod.idProducto')
-                    ->where('prod.sector', '=', $this->sector)
-                    ->where('prod.estado', '=', ProductStatus::Sold->value)
-                    ->where('prod.idTipoProducto', '=', $this->productTypeId);
-            })
+            ->join('producto AS prod', 'cp.idProducto', '=', 'prod.idProducto')
+            ->where('prod.sector', '=', $this->sector)
+            ->where('prod.estado', '=', ProductStatus::Sold->value)
+            ->where('prod.idTipoProducto', '=', $this->productTypeId)
+            ->ds()
             ->get()
-            ->map(function(object $data) {
+            ->map(function (object $data) {
                 return new CustomerDTO(
                     rut: $data->rut,
                     name: $data->nombre,
