@@ -17,6 +17,7 @@ Además, esta pantalla por cada registro debe mostrar un botón de acción para 
 ## Solución
 
 La solución se desarrolló bajo el framework PHP Laravel (https://laravel.com/docs). Además para el frontend se utilizo: TailwindCSS y AlpineJS.
+Requiere PHP 8.1
 
 ### Instalación
 

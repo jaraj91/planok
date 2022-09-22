@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:title>
         Dashboard
-    </x-slot:title>
+    </x-slot>
     <div>
         <x-customers :customers="$customersHavePurchaseParkingInSantiago" />
 
