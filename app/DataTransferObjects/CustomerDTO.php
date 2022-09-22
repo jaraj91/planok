@@ -17,6 +17,19 @@ class CustomerDTO
     ) {
     }
 
+    public static function make(object $customerData)
+    {
+        return new self(
+            rut: $customerData->rut,
+            name: $customerData->nombre,
+            phone: $customerData->telefono,
+            email: $customerData->email,
+            age: $customerData->edad,
+            sex: $customerData->sexo,
+            region: $customerData->region
+        );
+    }
+
     public function rut()
     {
         return Str::of($this->rut)->rut();

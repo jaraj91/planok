@@ -20,4 +20,6 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/usuarios', [UserController::class, 'index'])->name('users');
 
-Route::get('/cotizaciones', [QuotationController::class, 'index'])->name('quotations');
+Route::get('/cotizaciones', [QuotationController::class, 'index'])->name('quotations.index');
+
+Route::get('/cotizaciones/{id}', [QuotationController::class, 'show'])->name('quotations.show');

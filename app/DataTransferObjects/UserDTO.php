@@ -19,6 +19,20 @@ class UserDTO
     ) {
     }
 
+    public static function make(object $userData)
+    {
+        return new self(
+            firstName: $userData->nombre,
+            lastName: $userData->apellido,
+            rut: $userData->rut,
+            age: $userData->edad,
+            sex: $userData->sexo,
+            email: $userData->correo,
+            status: $userData->estado,
+            profile: $userData->perfil,
+        );
+    }
+
     public function name()
     {
         return Str::of($this->firstName)

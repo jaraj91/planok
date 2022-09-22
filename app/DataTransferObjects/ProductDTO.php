@@ -22,6 +22,22 @@ class ProductDTO
     ) {
     }
 
+    public static function make(object $productData)
+    {
+        return new self(
+            name: $productData->nombre,
+            description: $productData->descripcion,
+            listValue: $productData->valorLista,
+            orientation: $productData->orientacion,
+            floor: $productData->piso,
+            surface: $productData->superficie,
+            status: $productData->estado,
+            createdAt: $productData->fechaCreacion,
+            updatedAt: $productData->fechaEdicion,
+            sector: $productData->sector,
+        );
+    }
+
     public function name()
     {
         return Str::of($this->name)->title();

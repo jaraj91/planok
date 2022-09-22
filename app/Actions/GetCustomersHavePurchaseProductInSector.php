@@ -26,16 +26,6 @@ class GetCustomersHavePurchaseProductInSector
             ->where('prod.idTipoProducto', '=', $this->productTypeId)
             ->ds()
             ->get()
-            ->map(function (object $data) {
-                return new CustomerDTO(
-                    rut: $data->rut,
-                    name: $data->nombre,
-                    phone: $data->telefono,
-                    email: $data->email,
-                    age: $data->edad,
-                    sex: $data->sexo,
-                    region: $data->region
-                );
-            });
+            ->map(fn ($data) => CustomerDTO::make($data));
     }
 }

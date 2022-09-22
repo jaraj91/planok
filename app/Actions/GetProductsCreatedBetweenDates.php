@@ -24,19 +24,6 @@ class GetProductsCreatedBetweenDates
             ->leftJoin('tipo_producto AS tp', 'prod.idTipoProducto', '=', 'tp.IdTipoProducto')
             ->whereBetween('prod.fechaCreacion', [$this->from, $this->to])
             ->paginate(5)
-            ->through(function(object $data) {
-                return new ProductDTO(
-                    name: $data->nombre,
-                    description: $data->descripcion,
-                    listValue: $data->valorLista,
-                    orientation: $data->orientacion,
-                    floor: $data->piso,
-                    surface: $data->superficie,
-                    status: $data->estado,
-                    createdAt: $data->fechaCreacion,
-                    updatedAt: $data->fechaEdicion,
-                    sector: $data->sector,
-                );
-            });
+            ->through(fn ($data) => ProductDTO::make($data));
     }
 }

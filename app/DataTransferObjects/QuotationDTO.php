@@ -10,9 +10,11 @@ class QuotationDTO
 {
     public function __construct(
         private int $id,
-        private string $customer,
-        private string $userFirstName,
-        private string $userLastName,
+        private int $customerId,
+        private int $userId,
+        private string $customer = '',
+        private string $userFirstName = '',
+        private string $userLastName = '',
         private float $subTotal,
         private float $discount,
         private float $total,
@@ -24,9 +26,39 @@ class QuotationDTO
     ) {
     }
 
+    public static function make(object $quotationData)
+    {
+        return new self(
+            id: $quotationData->idCotizacion,
+            customerId: $quotationData->idUsuario,
+            userId: $quotationData->idUsuario,
+            customer: $quotationData->cliente ?? '',
+            userFirstName: $quotationData->usuario_nombre ?? '',
+            userLastName: $quotationData->usuario_apellido ?? '',
+            subTotal: $quotationData->subtotal,
+            discount: $quotationData->descuento,
+            total: $quotationData->total,
+            credit: $quotationData->credito,
+            creditAmount: $quotationData->montoCredito,
+            status: $quotationData->estado,
+            createdAt: $quotationData->fechaCreacion,
+            updatedAt: $quotationData->fechaModificacion,
+        );
+    }
+
     public function id()
     {
         return $this->id;
+    }
+
+    public function customerId()
+    {
+        return $this->customerId;
+    }
+
+    public function userId()
+    {
+        return $this->userId;
     }
 
     public function customer()
