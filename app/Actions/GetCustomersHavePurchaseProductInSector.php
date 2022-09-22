@@ -24,7 +24,6 @@ class GetCustomersHavePurchaseProductInSector
             ->where('prod.sector', '=', $this->sector)
             ->where('prod.estado', '=', ProductStatus::Sold->value)
             ->where('prod.idTipoProducto', '=', $this->productTypeId)
-            ->ds()
             ->get()
             ->map(fn ($data) => CustomerDTO::make($data));
     }
