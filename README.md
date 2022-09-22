@@ -22,21 +22,21 @@ La solución se desarrolló bajo el framework PHP Laravel (https://laravel.com/d
 
 1) Descomprimir carpeta adjunta en correo o clonar repositorio en github   
     ```sh
-    $ git clone git@github.com:jaraj91/planok.git
+    git clone git@github.com:jaraj91/planok.git
     ```
 2) Crear archivo .env desde plantilla .env.example y configurar las variables de acceso a base de datos.
     ```sh
-    $ cp .env.example .env
+    cp .env.example .env
     ```
 3) Instalar dependencias de composer   
     ```sh
-    $ composer install --no-dev
+    composer install --no-dev
     ```
 4) Installar dependencias de npm   
     ```sh
-    $ npm install
+    npm install
     ```
 5) Compilar assets   
     ```sh
-    $ npm run build
+    npm run build
     ```
